@@ -1,0 +1,42 @@
+class Solution:
+    def trap(self, height: List[int]) -> int:
+        # first solution
+        
+        l, r = 0, len(height) - 1
+        maxL, maxR = height[l], height[r]
+        res = 0
+
+        while l < r:
+            if maxL < maxR:
+                l += 1
+                maxL = max(height[l], maxL)
+                res += maxL - height[l]
+            else:
+                r -= 1
+                maxR = max(height[r], maxR)
+                res += maxR - height[r]
+
+        return res
+                
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        # second solution
+        # maxL = 
+        # maxR = 
+        # for l in range(len(height)):
+
+
+        # for r in range(len(height) - 1, 0, -1):
+            
